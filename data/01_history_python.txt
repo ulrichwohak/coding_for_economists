@@ -1,0 +1,55 @@
+    1  git status
+    2  python
+    3  git status
+    4  git add main.py 
+    5  git commit -m "Unknown changes"
+    6  git config --global user.email "foo@bar.com"
+    7  git config --global user.name "Ulrich"
+    8  git config credential.username "jaseylane"
+    9  git commit -m "Unknown changes"
+   10  git push
+   11  ls
+   12  # Rename main.py to 01_intro_to_python
+   13  mv main.py 01_intro_to_python
+   14  # Let's create a new main.py file
+   15  mv --help
+   16  # Some info about the mv shell command
+   17  # Create new main.py file
+   18  touch main.py
+   19  mv 01_intro_to_python 01_intro_to_python.py
+   20  python
+   21  # Rename file main.py to 02_basic_python
+   22  # and then push the file to Github
+   23  # You might have to run the following:
+   24  mv main.py 02_basic_python.py
+   25  git status
+   26  git add 01_intro_to_python.py 
+   27  git add 02_basic_python.py 
+   28  git status
+   29  git rm main.py
+   30  git status
+   31  git commit -m "Added first two intro to python scripts"
+   32  git push
+   33  touch main.py
+   34  git status
+   35  mv main.py 03_python_lists.py
+   36  git add 03_python_lists.py 
+   37  git commit -m "Added script to introduce list data type"
+   38  git push
+   39  touch main.py
+   40  mv main.py 04_python_dictionaries
+   41  git add 04_python_dictionaries 
+   42  git commit -m "Added script for dicts"
+   43  git push
+   44  touch main.py
+   45  mv main.py 05_python_sets.py
+   46  mv 04_python_dictionaries 04_python_dictionaries.py
+   47  git status
+   48  git rm 04_python_dictionaries
+   49  git add 04
+   50  git add 04_python_dictionaries.py 
+   51  git add 05_python_sets.py 
+   52  git commit -m "Added scripts for dicts and sets"
+   53  git push
+   54  history
+   55  history > 01_history_python.txt
