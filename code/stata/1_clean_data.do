@@ -10,13 +10,28 @@ summarize award_value_euro, detail
 // display "Mean: `r(mean)'"
 
 * Drop outliers
-drop if award_value_euro > `r(p95)'
+// drop if award_value_euro > `r(p95)'
 
 * Plot the distribution of award_value_euro
-hist award_value_euro
+hist award_value_euro // Large outliers
+
+* Create a logged variable
+gen ln_award_value_euro = ln(award_value_euro)
+
+hist ln_award_value_euro // Looks much better.
 
 * Let's generate an indicator: 1 (above median), 0 otherwise
 generate above_mean = (award_value_euro > `r(p50)')
+
+save "data/derived/tender_data_analysis.dta", replace
+
+* Import country codes and save as .dta
+import delimited using "data/raw/country_codes/country_codes.csv", clear
+
+* Variable to match is iso31661alpha3
+rename iso31661alpha2 iso_country_code
+
+save "data/derived/country_codes.dta", replace
 
 * Little excursion: Looping in Stata
 
